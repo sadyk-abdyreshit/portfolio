@@ -28,13 +28,14 @@ section, summary, time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
-html {
-  scroll-behavior: smooth;
-}
 
 body {
 	line-height: 1;
 }
+html {
+    scroll-behavior: smooth;
+}
+
 
 ol, ul {
 	list-style: none;
@@ -2664,13 +2665,13 @@ input, select, textarea {
 
 	ul.contact {
 		list-style: none;
-		padding: 0;
+		padding: 0;;
 	}
 
 		ul.contact li {
 			text-decoration: none;
-			margin: 2.5em 0 0 0;
-			padding: 0 0 0 3.25em;
+			margin: 1em 0 0 0;
+			padding: 0 0 0 3em;
 			position: relative;
 		}
 
@@ -3261,7 +3262,7 @@ input, select, textarea {
 		-ms-user-select: none;
 		user-select: none;
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		background: rgba(46, 49, 65, 0.8);
+		background: rgba(20, 22, 32, 0.8);
 		cursor: default;
 		height: 100%;
 		left: 0;
@@ -3284,7 +3285,7 @@ input, select, textarea {
 			-ms-transition: opacity 0.35s ease, -ms-transform 0.35s ease;
 			transition: opacity 0.35s ease, transform 0.35s ease;
 			-webkit-overflow-scrolling: touch;
-			background: #4c5c96;
+			background: #303857;
 			border-radius: 5px;
 			display: block;
 			max-width: 100%;
@@ -3378,41 +3379,87 @@ input, select, textarea {
 			opacity: 1;
 		}
 
+/*Experiences */
+#skills .inner {
+	margin-top: -5em;
+	margin-bottom: -5em;
+    padding-bottom: 0;
+}
+
+#skills h2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.5em;
+	margin-bottom: 0.8em;
+	padding-bottom: 0.4em;
+}
+
+
+#skills h3 {
+    margin-bottom: 1em;
+    border-bottom: 2px solid #ed4933; /* Uses the template's accent color */
+    display: inline-block;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    margin-bottom: 0.5em;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+#skills ul li::before {
+    content: "•";
+    color: #ed4933;
+    position: absolute;
+    left: 0;
+}
+		
 /* Banner */
 
 	#banner {
 		padding: 10em 0 4.75em 0 ;
+	    background-color: #2e3141;
+    	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(27, 29, 39, 0.8)), url("../../images/background.jpg");
+    	background-size: auto, cover;
+    	background-position: center, center;
+		background-repeat: no-repeat, no-repeat;
+		background-attachment: fixed;
+		margin-bottom: -6.5em;
 	}
 
 		#banner .inner {
 			margin: 0 auto;
 			width: 55em;
+			display: flex;            /* Включаем Flexbox */
+			flex-direction: column;   /* Располагаем элементы друг под другом */
+			align-items: center;      /* Центрируем все элементы по горизонтали */
+			text-align: center;       /* Центрируем текст внутри h2 и p */
 		}
 
-		#banner .logo {
-			-moz-transition: opacity 2s ease, -moz-transform 1s ease;
-			-webkit-transition: opacity 2s ease, -webkit-transform 1s ease;
-			-ms-transition: opacity 2s ease, -ms-transform 1s ease;
-			transition: opacity 2s ease, transform 1s ease;
-			-moz-transform: translateY(0);
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-			opacity: 1;
-			margin: 0 0 1.3em 0;
+		#banner img {
+			width: 256px;
+			height: 256px;
+			border-radius: 50%;
+			object-fit: cover;        /* Чтобы фото не искажалось */
+			margin-bottom: 1.5em;     /* Отступ снизу до заголовка */
 		}
 
-			#banner .logo .icon {
-				border-radius: 100%;
-				border: solid 2px rgba(255, 255, 255, 0.125);
-				cursor: default;
-				display: inline-block;
-				font-size: 2em;
-				height: 2.25em;
-				line-height: 2.25em;
-				text-align: center;
-				width: 2.25em;
-			}
+		#banner .about-me {
+			margin: 0 auto;
+			width: 55em;
+			display: flex;            /* Включаем Flexbox */
+			flex-direction: column;   /* Располагаем элементы друг под другом */
+			align-items: center;      /* Центрируем все элементы по горизонтали */
+			text-align: center;
+		}
+
 
 		#banner h2 {
 			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
@@ -3433,7 +3480,8 @@ input, select, textarea {
 			filter: blur(0);
 			opacity: 1;
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-			font-size: 2.25em;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-size: 2em;
 			margin-bottom: 0.8em;
 			padding-bottom: 0.4em;
 		}
@@ -3458,7 +3506,7 @@ input, select, textarea {
 			opacity: 1;
 			font-family: Raleway, Helvetica, sans-serif;
 			font-size: 1em;
-			font-weight: 200;
+			font-weight: 200;;
 			letter-spacing: 0.1em;
 			line-height: 2;
 			text-transform: uppercase;
@@ -3469,11 +3517,9 @@ input, select, textarea {
 			#banner {
 				padding: 7em 0 8.25em 0 ;
 				background-color: #2e3141;
-				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-				background-size: auto,
- cover;
-				background-position: center,
- center;
+				background-image: url("../../images/background.jpg");
+				background-size: auto, cover;
+				background-position: center, center;
 				margin-bottom: -6.5em;
 			}
 
@@ -3486,7 +3532,7 @@ input, select, textarea {
 				margin-bottom: -4.75em;
 			}
 
-				#banner .inner {
+				#banner .inner, #banner .about-me {
 					width: 100%;
 				}
 
@@ -3498,14 +3544,6 @@ input, select, textarea {
 				padding: 5em 2em 4.25em 2em ;
 				margin-bottom: -2.5em;
 			}
-
-				#banner .logo {
-					margin: 0 0 1em 0;
-				}
-
-					#banner .logo .icon {
-						font-size: 1.5em;
-					}
 
 				#banner h2 {
 					font-size: 1.5em;
@@ -4047,13 +4085,16 @@ input, select, textarea {
 			margin: 4em 0 2em 0;
 			padding: 2em 0 0 0;
 			width: 100%;
+			display: flex;
+			justify-content: center;
 		}
 
 			#footer .inner .copyright li {
 				border-left: solid 2px rgba(255, 255, 255, 0.125);
 				color: rgba(255, 255, 255, 0.35);
 				display: inline-block;
-				font-size: 0.9em;
+				font-size: 1em;
+				font-style: normal;
 				line-height: 1;
 				margin-left: 1em;
 				padding: 0;
