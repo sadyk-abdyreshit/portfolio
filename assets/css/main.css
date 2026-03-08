@@ -3076,12 +3076,9 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		-moz-transition: background-color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out;
 		background-color: rgba(53, 56, 73, 0.95);
 		height: 3.5em;
+		top: 0;
 		left: 0;
 		line-height: 3.5em;
 		padding: 0 1.25em;
@@ -3089,8 +3086,10 @@ input, select, textarea {
 		top: 0;
 		width: 100%;
 		z-index: 10000;
+		position: fixed;
+	    width: 100%;
+    	text-align: center;
 	}
-
 		#header h1 {
 			-moz-transition: opacity 0.2s ease-in-out, visibility 0.2s;
 			-webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s;
@@ -3101,81 +3100,29 @@ input, select, textarea {
 			margin-bottom: 0;
 			opacity: 1;
 			visibility: visible;
+			 position: absolute;
+  			 left: 30px;
 		}
 
 			#header h1 a {
 				border: 0;
 			}
 
-		#header nav {
-			font-family: Raleway, Helvetica, sans-serif;
-			font-size: 0.8em;
-			font-weight: 700;
-			height: 3em;
-			letter-spacing: 0.1em;
-			line-height: 3em;
-			position: absolute;
-			right: 0.7em;
-			text-transform: uppercase;
-			top: 0.7em;
-		}
-
+			#header nav {
+				display: flex;
+				justify-content: center;
+			}
 			#header nav a {
 				border: 0;
 				display: inline-block;
-				padding: 0 1em;
+				padding: 0em 1.25em;
 			}
 
 				#header nav a:before {
 					float: right;
-					margin-left: 0.75em;
+					margin-left: 10em;
 				}
 
-				#header nav a[href="#menu"] {
-					text-decoration: none;
-					-moz-transition: background-color 0.2s ease-in-out;
-					-webkit-transition: background-color 0.2s ease-in-out;
-					-ms-transition: background-color 0.2s ease-in-out;
-					transition: background-color 0.2s ease-in-out;
-					border-radius: 5px;
-					box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
-					padding: 0 1.35em;
-				}
-
-					#header nav a[href="#menu"]:before {
-						-moz-osx-font-smoothing: grayscale;
-						-webkit-font-smoothing: antialiased;
-						display: inline-block;
-						font-style: normal;
-						font-variant: normal;
-						text-rendering: auto;
-						line-height: 1;
-						text-transform: none !important;
-						font-family: 'Font Awesome 5 Free';
-						font-weight: 900;
-					}
-
-					#header nav a[href="#menu"]:before {
-						content: '\f0c9';
-						line-height: inherit;
-					}
-
-					#header nav a[href="#menu"]:hover {
-						background-color: rgba(255, 255, 255, 0.025);
-					}
-
-					#header nav a[href="#menu"]:active {
-						background-color: rgba(255, 255, 255, 0.075);
-					}
-
-		#header.alt {
-			background-color: transparent;
-		}
-
-			#header.alt h1 {
-				opacity: 0;
-				visibility: hidden;
-			}
 
 		@media screen and (max-width: 736px) {
 
@@ -3190,21 +3137,6 @@ input, select, textarea {
 					height: inherit;
 					line-height: inherit;
 				}
-
-					#header nav a {
-						height: inherit;
-						line-height: inherit;
-					}
-
-						#header nav a[href="#menu"] {
-							box-shadow: none;
-							padding: 0 1em;
-							border-radius: 0;
-						}
-
-							#header nav a[href="#menu"]:hover, #header nav a[href="#menu"]:active {
-								background-color: inherit;
-							}
 
 		}
 
@@ -3230,155 +3162,6 @@ input, select, textarea {
 
 		}
 
-/* Menu */
-
-	#page-wrapper {
-		-moz-transition: -moz-filter 0.25s ease;
-		-webkit-transition: -webkit-filter 0.25s ease;
-		-ms-transition: -ms-filter 0.25s ease;
-		transition: filter 0.25s ease;
-	}
-
-	#menu {
-		-moz-align-items: center;
-		-webkit-align-items: center;
-		-ms-align-items: center;
-		align-items: center;
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-justify-content: center;
-		-webkit-justify-content: center;
-		-ms-justify-content: center;
-		justify-content: center;
-		pointer-events: none;
-		-moz-transition: opacity 0.35s ease, visibility 0.35s;
-		-webkit-transition: opacity 0.35s ease, visibility 0.35s;
-		-ms-transition: opacity 0.35s ease, visibility 0.35s;
-		transition: opacity 0.35s ease, visibility 0.35s;
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		background: rgba(20, 22, 32, 0.8);
-		cursor: default;
-		height: 100%;
-		left: 0;
-		opacity: 0;
-		position: fixed;
-		text-align: center;
-		top: 0;
-		visibility: hidden;
-		width: 100%;
-	}
-
-		#menu .inner {
-			padding: 2.5em 1.5em 0.5em 1.5em ;
-			-moz-transform: translateY(0.5em);
-			-webkit-transform: translateY(0.5em);
-			-ms-transform: translateY(0.5em);
-			transform: translateY(0.5em);
-			-moz-transition: opacity 0.35s ease, -moz-transform 0.35s ease;
-			-webkit-transition: opacity 0.35s ease, -webkit-transform 0.35s ease;
-			-ms-transition: opacity 0.35s ease, -ms-transform 0.35s ease;
-			transition: opacity 0.35s ease, transform 0.35s ease;
-			-webkit-overflow-scrolling: touch;
-			background: #303857;
-			border-radius: 5px;
-			display: block;
-			max-width: 100%;
-			opacity: 0;
-			position: relative;
-			width: 18em;
-		}
-
-		#menu h2 {
-			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-			padding-bottom: 1em;
-		}
-
-		#menu .close {
-			background-image: url("images/close.svg");
-			background-position: 75% 25%;
-			background-repeat: no-repeat;
-			background-size: 2em 2em;
-			border: 0;
-			content: '';
-			display: block;
-			height: 4em;
-			overflow: hidden;
-			position: absolute;
-			right: 0;
-			text-align: center;
-			text-indent: 4em;
-			top: 0;
-			width: 4em;
-		}
-
-		#menu .links {
-			list-style: none;
-			margin-bottom: 1.5em;
-			padding: 0;
-		}
-
-			#menu .links li {
-				padding: 0;
-			}
-
-				#menu .links li a {
-					border-radius: 5px;
-					border: 0;
-					display: block;
-					font-family: Raleway, Helvetica, sans-serif;
-					font-size: 0.8em;
-					font-weight: 200;
-					letter-spacing: 0.1em;
-					line-height: 1.85em;
-					padding: 0.75em 0;
-					text-transform: uppercase;
-				}
-
-					#menu .links li a:hover {
-						background: #45558d;
-					}
-
-		@media screen and (max-width: 736px) {
-
-			#menu .inner {
-				max-height: 100%;
-				overflow-y: auto;
-				overflow-x: hidden;
-			}
-
-				#menu .inner .close {
-					background-size: 1.5em 1.5em;
-				}
-
-		}
-
-	body.is-menu-visible #page-wrapper {
-		-moz-filter: blur(1.5px);
-		-webkit-filter: blur(1.5px);
-		-ms-filter: blur(1.5px);
-		filter: blur(1.5px);
-	}
-
-	body.is-menu-visible #menu {
-		pointer-events: auto;
-		opacity: 1;
-		visibility: visible;
-	}
-
-		body.is-menu-visible #menu .inner {
-			-moz-transform: translateY(0);
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-			opacity: 1;
-		}
-
 /*Experiences */
 #skills .inner {
 	margin-top: -5em;
@@ -3386,15 +3169,6 @@ input, select, textarea {
     padding-bottom: 0;
 }
 
-#skills h2{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 1.5em;
-	margin-bottom: 0.8em;
-	padding-bottom: 0.4em;
-}
 
 
 #skills h3 {
@@ -3449,6 +3223,7 @@ input, select, textarea {
 			border-radius: 50%;
 			object-fit: cover;        /* Чтобы фото не искажалось */
 			margin-bottom: 1.5em;     /* Отступ снизу до заголовка */
+			
 		}
 
 		#banner .about-me {
@@ -3457,7 +3232,7 @@ input, select, textarea {
 			display: flex;            /* Включаем Flexbox */
 			flex-direction: column;   /* Располагаем элементы друг под другом */
 			align-items: center;      /* Центрируем все элементы по горизонтали */
-			text-align: center;
+			text-align: justify;
 		}
 
 
@@ -3844,6 +3619,7 @@ input, select, textarea {
 				width: 22em;
 				overflow: hidden;
 				-ms-flex: 1;
+				flex: 1;
 			}
 
 				.wrapper.spotlight .image img {
@@ -3853,7 +3629,7 @@ input, select, textarea {
 
 			.wrapper.spotlight .content {
 				width: 100%;
-				-ms-flex: 2;
+				flex: 2;
 			}
 
 			.wrapper.spotlight:nth-child(2n - 1) .inner {
@@ -4049,7 +3825,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer .inner {
-		padding: 5em 0 3em 0 ;
+		padding: 0m 0 3em 0 ;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -4173,28 +3949,5 @@ input, select, textarea {
 				#footer .inner .contact {
 					margin: 0 0 3em 0;
 				}
-
-	}
-
-	@media screen and (max-width: 480px) {
-
-		#footer .inner .copyright li {
-			border-left: 0;
-			display: block;
-			margin: 1em 0 0 0;
-			padding-left: 0;
-		}
-
-			#footer .inner .copyright li:first-child {
-				margin-top: 0;
-			}
-
-	}
-
-	@media screen and (max-width: 360px) {
-
-		#footer .inner {
-			padding: 2em 1.5em 0.1em 1.5em ;
-		}
 
 	}
