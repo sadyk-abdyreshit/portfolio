@@ -3087,8 +3087,8 @@ input, select, textarea {
 		width: 100%;
 		z-index: 10000;
 		position: fixed;
-	    width: 100%;
-    	text-align: center;
+		width: 100%;
+		text-align: center;
 	}
 		#header h1 {
 			-moz-transition: opacity 0.2s ease-in-out, visibility 0.2s;
@@ -3100,8 +3100,8 @@ input, select, textarea {
 			margin-bottom: 0;
 			opacity: 1;
 			visibility: visible;
-			 position: absolute;
-  			 left: 30px;
+			position: absolute;
+			left: 30px;
 		}
 
 			#header h1 a {
@@ -3111,11 +3111,13 @@ input, select, textarea {
 			#header nav {
 				display: flex;
 				justify-content: center;
+				font-size: 1em;
 			}
 			#header nav a {
 				border: 0;
 				display: inline-block;
-				padding: 0em 1.25em;
+				padding: 0em 0.85em;
+				white-space: nowrap;
 			}
 
 				#header nav a:before {
@@ -3131,11 +3133,16 @@ input, select, textarea {
 				line-height: 2.75em;
 			}
 
+			#header h1 {
+				display: none;
+			}
+
 				#header nav {
 					top: 0;
 					right: 0;
 					height: inherit;
 					line-height: inherit;
+					font-size: 0.7em;
 				}
 
 		}
@@ -3292,11 +3299,32 @@ input, select, textarea {
 			#banner {
 				padding: 7em 0 8.25em 0 ;
 				background-color: #2e3141;
-				background-image: url("../../images/background.jpg");
+				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/background.jpg");
 				background-size: auto, cover;
 				background-position: center, center;
+				background-attachment: fixed;
 				margin-bottom: -6.5em;
 			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#banner {
+				background-attachment: scroll;
+				background-size: auto, cover;
+				background-position: center, center;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#banner {
+				background-size: auto, 150%;
+				background-position: center, center;
+			}
+
 
 		}
 
